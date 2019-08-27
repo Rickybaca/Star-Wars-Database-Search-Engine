@@ -1,0 +1,32 @@
+<!--
+Course: CST 205
+Title: hello.html
+Abstract: This is the homepage of the application. It shows the user an input and a search button
+          that will submit the form.
+Authors: Maud Werkman, Ricardo Baca, Alexander Redman
+Date: 5-14-2018
+Github: https://github.com/aredmancsumb/Team-8-Master-Repo
+-->
+
+<html>
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    </head>
+
+    <body>
+        <img src="{{ url_for('static', filename='star_wars_logo11.png') }}" alt="">
+        <h1>Database Search Engine </h1>
+        <form action="{{url_for('results')}}" method="post">
+            {{ form.csrf }}
+
+            <div class="input text">
+                {{ form.name(placeholder='Luke Skywalker') }}
+            </div>
+
+            <div class="input submit">
+                <input type="Submit" name="Search" value="Search" />
+            </div>
+        </form>
+    </body>
+</html>
